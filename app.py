@@ -2,16 +2,13 @@ from flask import Flask, jsonify, request
 from peewee import *
 from playhouse.shortcuts import model_to_dict, dict_to_model
 from playhouse.postgres_ext import ArrayField
-# from playhouse.postgres_ext import PostgresqlExtDatabase
 
 db = PostgresqlDatabase('projects_fl', user='mohamedkhan', password='akeel', host='localhost', port=5432)
-
 
 class BaseModel(Model):
   class Meta:
     database = db
   
-
 class Project(BaseModel):
   project_name = CharField()
   project_description = CharField()
@@ -24,13 +21,6 @@ class Users(BaseModel):
   user_password = CharField()
 
 db.connect()
-# db.drop_tables([Project])
-# db.create_tables([Project])
-# db.drop_tables([Users])
-# db.create_tables([Users])killa
-
-# Project(name='Tyler', description="A project for getting cats").save()
-# Project(name='Zakk', description="A project for getting dogs").save()
 
 app = Flask(__name__)
 
@@ -66,9 +56,7 @@ def user_endpoint(id=None):
     else:
         usersList = []
         for user in Users.select():
-            print(Users.select())
             usersList.append(model_to_dict(user))
-            # print(usersList)
         return jsonify(usersList)
 
   if request.method == 'PUT':

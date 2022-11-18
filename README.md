@@ -7,10 +7,12 @@ This project is a CRUD REST API created with Python, flask, peewee, and Postgres
 **Install Pipenv**
 Install Pipenv with either Pip or Homebrew. Pip is recommended.
 
+```
 Pip: pip3 install pipenv
 Homebrew: brew install pipenv
+```
 
-then...
+then..
 
 ```bash
 pipenv install
@@ -24,8 +26,10 @@ psql -d projects_fl < seed.sql
 
 or from psql cli..
 
+```
 \i schema.sql
 \i seed.sql
+```
 
 then..
 

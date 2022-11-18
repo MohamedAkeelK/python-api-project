@@ -54,9 +54,9 @@ python3 app.py
 
 packages...
 
-flask = "_"
-peewee = "_"
-psycopg2-binary = "\*"
+- flask
+- peewee
+- psycopg2-binary
 
 ## Contributing
 
